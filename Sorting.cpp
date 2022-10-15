@@ -44,6 +44,31 @@ void InsertionSort(int a[],int n)
     }
     a[j+1]=temp;
 }
+void ShellSort(int a[],int n)
+{
+    int step;
+    int temp;
+    int i,j;
+    for(step=n/2;step>0;step=step/2)
+    {
+        for(i=step;i<n;i++)                         // HERE  1  IS  REPLACED BY   "STEP" 
+        {
+            temp=a[i];
+            for(j=i-step;j>=0;j=j-step)
+            {
+                if(a[j]>temp)
+                {
+                    a[j+step]=a[j];
+                }
+                else
+                {
+                    break;
+                }
+            }
+         a[j+step]=temp;
+        }
+    }
+}
 int main()
 {
     int a[100];
