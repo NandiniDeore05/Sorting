@@ -23,6 +23,27 @@ void BubbleSort(int a[],int n)
         }
     }
 }
+void InsertionSort(int a[],int n)
+{
+    int i,j;
+    int temp;
+    for(i=1;i<n;i++)
+    {
+        temp=a[i];
+        for(j=i-1;j>=0;j--)        // ADHICHE SAGALE COMPARE KARTA
+        {
+            if(a[j]>temp)
+            {
+                a[j+1]=a[j];
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+    a[j+1]=temp;
+}
 int main()
 {
     int a[100];
